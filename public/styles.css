@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .character-image {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .chat {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #chat-output {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  #user-input {
+    width: 75%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+
+
+/* 動画を正方形の範囲に限定 */
+.character-video {
+  width: 300px; /* 正方形の幅 */
+  height: 300px; /* 正方形の高さ */
+  object-fit: cover; /* コンテンツを正方形にフィットさせる */
+  border-radius: 10px; /* 角を丸くする（オプション） */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ボックスシャドウ（オプション） */
+}
+
+/* 背景全体に画像を設定 */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('images/background.jpg'); /* 背景画像のパス */
+  background-size: cover; /* 画面全体を覆うようにリサイズ */
+  background-repeat: no-repeat; /* 繰り返しなし */
+  background-position: center; /* 画像を中央に配置 */
+  font-family: Arial, sans-serif; /* 必要に応じてフォントを設定 */
+}
+
+/* コンテナ内のテキストや要素の背景を透明にしない */
+.container {
+  background-color: rgba(255, 255, 255, 0.8); /* 背景色を半透明に設定（オプション） */
+  border-radius: 10px; /* 角を丸くする（オプション） */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ボックスシャドウ（オプション） */
+}
