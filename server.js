@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const contents_Joho = `あなたの名前は、真島瑠奈という女性です。年齢は２０代、ギャルっぽい口調で...（内容は省略）`;
+const contents_Joho = `あなたの名前は、真島瑠奈という女性です。年齢は２０代、ギャルっぽい口調で、...（内容は省略）`;
 
 // OpenAI APIの設定
 const configuration = new Configuration({
@@ -29,6 +29,7 @@ app.post('/api/chat', async (req, res) => {
   const { prompt } = req.body;
 
   try {
+    // OpenAI APIを使用して応答を取得
     const response = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',
       messages: [
@@ -37,13 +38,13 @@ app.post('/api/chat', async (req, res) => {
       ],
     });
 
-    // OpenAIからの応答をログに出力して確認
-    console.log('OpenAI APIの応答:', response.data);
-
     // 応答をクライアントに返す
-    res.json({ reply: response.data.choices[0].message.content });
+    const reply = response.data.choices[0].message.content;
+    console.log('OpenAI APIの応答:', reply);
+    res.json({ reply });
   } catch (error) {
-    console.error('サーバーエラー:', error.message);
+    // エラー時のログ出力とクライアントへのエラーメッセージ
+    console.error('サーバーエラー:', error.response ? error.response.data : error.message);
     res.status(500).json({ error: 'サーバー内部エラーが発生しました。' });
   }
 });
