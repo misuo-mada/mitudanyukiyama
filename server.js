@@ -53,3 +53,6 @@ app.post('/api/chat', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
+
+console.log('環境変数 OPENAI_API_KEY:', process.env.OPENAI_API_KEY);
+
