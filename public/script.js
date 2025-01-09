@@ -35,3 +35,5 @@ chatForm.addEventListener('submit', async (event) => {
     console.error('エラー:', error.message);
   }
 });
+
+console.log('使用しているAPIキー:', process.env.OPENAI_API_KEY);
