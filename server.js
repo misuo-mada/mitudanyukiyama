@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 // ChatGPT APIとの通信エンドポイント
-app.post('/api/chat', async (req, res) => {
+app.post('https://mitudanyukiyama.herokuapp.com/api/chat', async (req, res) => {
   const { prompt } = req.body;
 
   try {
