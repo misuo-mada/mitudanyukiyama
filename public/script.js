@@ -16,7 +16,7 @@ chatForm.addEventListener('submit', async (event) => {
 
   try {
     // サーバーにリクエストを送信
-    const response = await fetch('https://mitudanyukiyama.herokuapp.com/api/chat', {
+    const response = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prompt: message }),
