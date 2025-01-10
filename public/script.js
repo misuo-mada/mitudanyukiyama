@@ -9,10 +9,17 @@ chatForm.addEventListener('submit', async (event) => {
   const message = userInput.value;
   userInput.value = '';
 
-  // ユーザーのメッセージを表示
+  // ユーザーのメッセージを右側に表示
   const userMessage = document.createElement('div');
-  userMessage.textContent = `あなた: ${message}`;
+  userMessage.classList.add('message', 'user'); // クラスを追加
+  const userBubble = document.createElement('div');
+  userBubble.classList.add('bubble'); // 吹き出し
+  userBubble.textContent = message;
+  userMessage.appendChild(userBubble);
   chatOutput.appendChild(userMessage);
+
+  // チャット画面をスクロール
+  chatOutput.scrollTop = chatOutput.scrollHeight;
 
   try {
     // サーバーにリクエストを送信
@@ -24,9 +31,13 @@ chatForm.addEventListener('submit', async (event) => {
 
     const data = await response.json();
 
-    // キャラクターの応答を表示
+    // 相手（真島）のメッセージを左側に表示
     const characterMessage = document.createElement('div');
-    characterMessage.textContent = `真島: ${data.reply}`;
+    characterMessage.classList.add('message', 'character'); // クラスを追加
+    const characterBubble = document.createElement('div');
+    characterBubble.classList.add('bubble'); // 吹き出し
+    characterBubble.textContent = data.reply;
+    characterMessage.appendChild(characterBubble);
     chatOutput.appendChild(characterMessage);
 
     // チャット画面をスクロール
