@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('images/background.jpg'); /* 背景画像のパス */
+  background-image: url('images/1.jpg'); /* 背景画像のパス */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
